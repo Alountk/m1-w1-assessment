@@ -1,5 +1,8 @@
 // Write a function that returns the product of 2 numbers
 function product(x, y) {
+  if (typeof x !== 'number' || typeof y !== 'number'){
+
+  }
   return x * y;
 }
 
@@ -106,6 +109,20 @@ function getFullName(personObj) {
 }
 
 // Return the largest number in a two dimensional array
+function maxTwoDimArray(matrix){
+  maxNum=0;
+  for (i = 0; i< matrix.length;i++){
+    for(j=0; j< matrix.length ;j++){
+      if (matrix[i][j]>maxNum){
+        maxNum=matrix[i][j];
+      }else{
+        continue;
+      }
+    }
+  }
+  return maxNum;
+}
+/* Esta es otra solucion que he encontrado por internet, pero aún tengo que analizarla
 function maxTwoDimArray(a){
   return Math.max(...a.map(e => Array.isArray(e) ? maxTwoDimArray(e) : e));
-}
+}*/

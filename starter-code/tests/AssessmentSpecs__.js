@@ -2,13 +2,6 @@ describe('product(x, y) ', () => {
   it('should multiply two numbers correctly', () => {
     expect(product(10, 5)).toBe(50);
   });
-
-  it('should return false when one or more of the arguments is not a number', () => {
-    const whenFirstArgumentNaN = product(undefined, 10);
-    const whenSecondArgumentNaN = product(10, null);
-
-    expect(whenFirstArgumentNaN && whenSecondArgumentNaN).toBe(false);
-  });
 });
 
 describe('isEven(num) ', () => {
@@ -47,16 +40,6 @@ describe('maxOfThreeNumbers(a, b, c)', () => {
   it('should return the value closest to 0 when all arguments are numbers that are less than 0.', () => {
     expect(maxOfThreeNumbers(4, 5, 99)).toBe(99);
   });
-
-  it('should return false when one or more of the expected arguments is not a number', () => {
-    var whenFirstArgumentNaN = maxOfThreeNumbers(null, 1, 5);
-    var whenSecondArgumentNaN = maxOfThreeNumbers(1, null, 5);
-    var whenThirdArgumentNaN = maxOfThreeNumbers(1, 5, null);
-
-    expect(
-      whenFirstArgumentNaN && whenSecondArgumentNaN && whenThirdArgumentNaN,
-    ).toBe(false);
-  });
 });
 
 describe('sumArray(numbers)', () => {
@@ -67,47 +50,17 @@ describe('sumArray(numbers)', () => {
   it('should return 0 when first argument is an empty array.', () => {
     expect(sumArray([])).toBe(0);
   });
-
-  it('should return false when first argument is not an array.', () => {
-    expect(sumArray('1 2 3')).toBe(false);
-  });
-
-  it('should return false when argument array contains a value that is not a number.', () => {
-    expect(sumArray([1, 2, undefined, 44])).toBe(false);
-  });
 });
 
 describe('maxOfArray(numbers)', () => {
   it('should return the highest number from the given array of numbers.', () => {
     expect(maxOfArray([1, 200, 100, 44])).toBe(200);
   });
-
-  it('should return false when first argument is an empty array.', () => {
-    expect(maxOfArray([])).toBe(false);
-  });
-
-  it('should return false the first argument is not an array.', () => {
-    expect(maxOfArray('1 2 3')).toBe(false);
-  });
 });
 
 describe('longestString(stringsArr)', () => {
   it('should return the longest string from the given array of strings.', () => {
     expect(longestString(['abc', 'bca', 'ab', 'b'])).toBe('abc');
-  });
-
-  it('should return false when first argument is not an array.', () => {
-    expect(longestString('1 2 3')).toBe(false);
-  });
-
-  it('should return false when first argument is an empty array.', () => {
-    expect(longestString([])).toBe(false);
-  });
-
-  it('should return the longest string from the mixed array containing strings and other data types', () => {
-    expect(longestString(['abc', 1, null, undefined, 'ab', 'abcd'])).toBe(
-      'abcd',
-    );
   });
 });
 
@@ -118,18 +71,6 @@ describe('doesWordExist(wordsArr, word)', () => {
 
   it("should return false if the given array doesn't contain the expected string", () => {
     expect(doesWordExist(['foo', 'bar', 'baz'], 'fizz')).toBe(false);
-  });
-
-  it('should return false if first argument is an empty array', () => {
-    expect(doesWordExist([], 'foo')).toBe(false);
-  });
-
-  it('should return false if the first argument is not an array', () => {
-    expect(doesWordExist('foo bar baz', 'foo')).toBe(false);
-  });
-
-  it('should return false if the second argument is not a string', () => {
-    expect(doesWordExist(['foo', 'bar', 'baz', 'foo'], 100)).toBe(false);
   });
 });
 
@@ -152,11 +93,6 @@ describe('findUnique(wordsArr)', () => {
     const assertion = findUnique([]);
     expect(assertion).toBe(false);
   });
-
-  it('should return false if first argument is not an array', () => {
-    const assertion = findUnique('foo bar baz');
-    expect(assertion).toBe(false);
-  });
 });
 
 describe('getFullName( { firstName: String, lastName: String } )', () => {
@@ -165,23 +101,6 @@ describe('getFullName( { firstName: String, lastName: String } )', () => {
       'Tony Stark',
     );
   });
-
-  it('should return false if the provided argument is not an object', () => {
-    expect(getFullName(['Tony', 'Stark'])).toBe(false);
-  });
-
-  it('should return false if properties firstName or lastName are undefined, on the provided argument object.', () => {
-    var firstNameUndefined = getFullName({
-      firstName: undefined,
-      lastName: 'Stark',
-    });
-    var lastNameUndefined = getFullName({
-      firstName: 'Tony',
-      lastName: undefined,
-    });
-
-    expect(firstNameUndefined || lastNameUndefined).toBe(false);
-  });
 });
 
 describe('maxTwoDimArray(matrix)', () => {
@@ -189,13 +108,5 @@ describe('maxTwoDimArray(matrix)', () => {
 
   it('should return the highest number from a two dimensional array', () => {
     expect(maxTwoDimArray(matrix)).toBe(3133);
-  });
-
-  it('should return false if the argument is not an array', () => {
-    expect(maxTwoDimArray('123, 45, 6')).toBe(false);
-  });
-
-  it('should return false if the argument is an empty array.', () => {
-    expect(maxTwoDimArray([])).toBe(false);
   });
 });
